@@ -1,2 +1,2 @@
-# project-1-game
+# project-0-game
 Unit 1 Project - Making a simple web game
