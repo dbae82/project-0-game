@@ -16,7 +16,7 @@ body {
 }
 
 #start-screen {
-    display: block;
+    display: none;
 }
 
 #start-section {
@@ -29,4 +29,24 @@ body {
 input {
     padding: 10px;
     margin-right: 10px;
+}
+
+#progress-bars {
+    display: flex;
+    flex-direction: row;
+}
+
+#red {
+    padding: 0 90px;
+    margin-right: 30px;
+}
+
+#green {
+    padding: 0 90px;
+    margin-right: 30px;
+}
+
+#blue {
+    padding: 0 90px;
+    margin-right: 30px;
 }

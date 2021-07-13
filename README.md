@@ -75,13 +75,13 @@ The game will end if either the character dies or the character maintains happin
     -Create the three character objects ✔️
     -Set button to take the input and make value for the name key for all objects ✔️
 
-4. Write out HTML for the character screen
-    -Set up a header to contain the name of character
-    -Setup progress bars using NES.css
-    -Set image for the character
-    -Setup buttons along the bottom to fill status bars
+4. Write out HTML for the character screen ✔️
+    -Set up a header to contain the name of character ✔️
+    -Setup progress bars using NES.css ✔️
+    -Set image for the character ✔️
+    -Setup buttons along the bottom to fill status bars ✔️
 
-5. Style the character screen
+5. Style the character screen 
 
 6. Set up event listeners for the status bar buttons
     -Connect the buttons to correspond to the correct status bar
