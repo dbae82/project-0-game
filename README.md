@@ -48,13 +48,33 @@ The game will end if either the character dies or the character maintains happin
     -status bars should pause
         --setInterval should be cleared
 
-# Minimal Viable Product
-
 # Icebox
--animations for the three characters to provide a little more life
--add fontawesome icon animations when buttons are clicked
--setInterval time to get shorter as each evolution occur for more difficulty
+setup a media query for smaller screens (max-width: 375px)
+animations for the three characters to provide a little more life
+add fontawesome icon animations when buttons are clicked
+setInterval time to get shorter as each evolution occur to increase difficulty
 
-# Milestones
+# Milestones/Minimal Viable Product
+1. Write out HTML for the beginning screen
+    Container with a header that says "Enter Character's Name"
+    Dialog box for input
+    Button to "Submit" input for DOM
+
+2. Style beginning screen
+    Use Google Fonts Amatic SC
+    Center box on the middle of the page
+    Run through steps to improve UI
+
+3. Set up event listener for the button
+    Console log to make sure it works
+    Create the three character objects
+    Set button to take the input and make value for the name key for all objects
+
+4. Write out HTML for the character screen
+    Set up a header to contain the name of character
+    Setup progress bars using NES.css
+    Set image for the character
 
 # Technologies
+Front end - HTML, CSS, JavaScript
+jQuery
