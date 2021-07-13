@@ -56,24 +56,44 @@ setInterval time to get shorter as each evolution occur to increase difficulty
 
 # Milestones/Minimal Viable Product
 1. Write out HTML for the beginning screen
-    Container with a header that says "Enter Character's Name"
-    Dialog box for input
-    Button to "Submit" input for DOM
+    -Container with a header that says "Enter Character's Name"
+    -Dialog box for input
+    -Button to "Submit" input for DOM
 
 2. Style beginning screen
-    Use Google Fonts Amatic SC
-    Center box on the middle of the page
-    Run through steps to improve UI
+    -Use Google Fonts Amatic SC
+    -Center box on the middle of the page
+    -Run through steps to improve UI
 
 3. Set up event listener for the button
-    Console log to make sure it works
-    Create the three character objects
-    Set button to take the input and make value for the name key for all objects
+    -Console log to make sure it works
+    -Create the three character objects
+    -Set button to take the input and make value for the name key for all objects
 
 4. Write out HTML for the character screen
-    Set up a header to contain the name of character
-    Setup progress bars using NES.css
-    Set image for the character
+    -Set up a header to contain the name of character
+    -Setup progress bars using NES.css
+    -Set image for the character
+    -Setup buttons along the bottom to fill status bars
+
+5. Style the character screen
+
+6. Set up event listeners for the status bar buttons
+    -Connect the buttons to correspond to the correct status bar
+    -Set up jQuery to hide the beginning screen content and show character screen content
+    -Set up setInterval timers for each status bar
+
+7. Write out HTML for game over screen
+    -H1 on the top with "Game Over"
+    -Container with the message "Happy Retirement!!" or "Died"
+    -Button in the container that can start the game over again
+
+8. Style the game over screen
+
+9. Set up event listeners for the game over screen
+    -Set the button to reset the game
+    -Set the game over container to stack on top of the character screen
+    -If..else statement for outcome of the game
 
 # Technologies
 Front end - HTML, CSS, JavaScript
