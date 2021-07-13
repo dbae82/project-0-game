@@ -48,6 +48,11 @@ The game will end if either the character dies or the character maintains happin
     -status bars should pause
         --setInterval should be cleared
 
+# Wireframes
+<img src="wireframes/beginning-screen.png">
+<img src="wireframes/character-screen.png">
+<img src="wireframes/game-over-screen.png">
+
 # Icebox
 setup a media query for smaller screens (max-width: 375px)
 animations for the three characters to provide a little more life
@@ -55,10 +60,10 @@ add fontawesome icon animations when buttons are clicked
 setInterval time to get shorter as each evolution occur to increase difficulty
 
 # Milestones/Minimal Viable Product
-1. Write out HTML for the beginning screen
-    -Container with a header that says "Enter Character's Name"
-    -Dialog box for input
-    -Button to "Submit" input for DOM
+1. Write out HTML for the beginning screen ✔️
+    -Container with a header that says "Enter Character's Name" ✔️
+    -Dialog box for input ✔️
+    -Button to "Submit" input for DOM ✔️
 
 2. Style beginning screen
     -Use Google Fonts Amatic SC
