@@ -65,13 +65,13 @@ setInterval time to get shorter as each evolution occur to increase difficulty
     -Dialog box for input ✔️
     -Button to "Submit" input for DOM ✔️
 
-2. Style beginning screen
-    -Use Google Fonts Amatic SC
-    -Center box on the middle of the page
-    -Run through steps to improve UI
+2. Style beginning screen ✔️
+    -Use Google Fonts Amatic SC ✔️
+    -Center box on the middle of the page ✔️
+    -Run through steps to improve UI ✔️
 
-3. Set up event listener for the button
-    -Console log to make sure it works
+3. Set up event listener for the button ✔️
+    -Console log to make sure it works ✔️
     -Create the three character objects
     -Set button to take the input and make value for the name key for all objects
 
