@@ -54,10 +54,10 @@ The game will end if either the character dies or the character maintains happin
 <img src="wireframes/game-over-screen.png">
 
 # Icebox
-setup a media query for smaller screens (max-width: 375px)
-animations for the three characters to provide a little more life
-add fontawesome icon animations when buttons are clicked
-setInterval time to get shorter as each evolution occur to increase difficulty
+1. setup a media query for smaller screens (max-width: 375px)
+2. animations for the three characters to provide a little more life
+3. add fontawesome icon animations when buttons are clicked
+4. setInterval time to get shorter as each evolution occur to increase difficulty
 
 # Milestones/Minimal Viable Product
 1. Write out HTML for the beginning screen ✔️
@@ -72,8 +72,8 @@ setInterval time to get shorter as each evolution occur to increase difficulty
 
 3. Set up event listener for the button ✔️
     -Console log to make sure it works ✔️
-    -Create the three character objects
-    -Set button to take the input and make value for the name key for all objects
+    -Create the three character objects ✔️
+    -Set button to take the input and make value for the name key for all objects ✔️
 
 4. Write out HTML for the character screen
     -Set up a header to contain the name of character

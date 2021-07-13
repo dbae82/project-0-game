@@ -2,6 +2,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -11,4 +13,20 @@ body {
     font-family: 'Amatic SC', cursive;
     height: 100vh;
     justify-content: center;
+}
+
+#start-screen {
+    display: block;
+}
+
+#start-section {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 15px;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
 }
