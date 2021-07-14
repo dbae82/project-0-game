@@ -81,11 +81,11 @@ The game will end if either the character dies or the character maintains happin
     -Set image for the character ✔️
     -Setup buttons along the bottom to fill status bars ✔️
 
-5. Style the character screen 
+5. Style the character screen ✔️
 
-6. Set up event listeners for the status bar buttons
-    -Connect the buttons to correspond to the correct status bar
-    -Set up jQuery to hide the beginning screen content and show character screen content
+6. Set up event listeners for the status bar buttons ✔️
+    -Connect the buttons to correspond to the correct status bar ✔️
+    -Set up jQuery to hide the beginning screen content and show character screen content ✔️
     -Set up setInterval timers for each status bar
 
 7. Write out HTML for game over screen
