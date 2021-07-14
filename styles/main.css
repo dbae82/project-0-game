@@ -65,6 +65,14 @@ input {
     width: 180px;
 }
 
+#icons-container {
+    max-width: 687.83px;
+}
+
+#icon {
+    margin: 0 100px;
+}
+
 #player-buttons {
     margin-top: 30px;
 }
@@ -107,4 +115,9 @@ input {
 
 #message {
     background-color: whitesmoke;
+}
+
+img {
+    height: 400px;
+    width: 350px;
 }
