@@ -86,7 +86,7 @@ The game will end if either the character dies or the character maintains happin
 6. Set up event listeners for the status bar buttons ✔️
     -Connect the buttons to correspond to the correct status bar ✔️
     -Set up jQuery to hide the beginning screen content and show character screen content ✔️
-    -Set up setInterval timers for each status bar
+    -Set up setInterval timers for each status bar ✔️
 
 7. Write out HTML for game over screen
     -H1 on the top with "Game Over"

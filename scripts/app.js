@@ -20,12 +20,17 @@ class Character {
     addStudy() {
         return this.study ++;
     };
-    reduceStatusBar() {
+    reduceStatusBar = () => {
         // console.log("type of health", typeof this.health);
-        this.health -= 20;
-        // this.sleep --;
-        // this.study --;
-        console.log("health", this.health);
+        this.health -= 3;
+        this.sleep -= 2;
+        this.study -= 4;
+        // console.log("health", this.health);
+        // console.log("sleep", this.sleep);
+        // console.log("study", this.study);
+        $("#red").attr("value", `${player.health}`);
+        $("#green").attr("value", `${player.sleep}`);
+        $("#blue").attr("value", `${player.study}`);
     };
     startTimer() {
         setInterval(this.reduceStatusBar, 1000);
