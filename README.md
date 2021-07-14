@@ -91,13 +91,13 @@ The game will end if either the character dies or the character maintains happin
 7. Write out HTML for game over screen ✔️
     -H1 on the top with "Game Over" ✔️
     -Container with the message "Happy Retirement!!" or "Died" ✔️
-    -Button in the container that can start the game over again
+    -Button in the container that can start the game over again ✔️
 
 8. Style the game over screen ✔️
 
-9. Set up event listeners for the game over screen
+9. Set up event listeners for the game over screen ✔️
     -Set the button to reset the game
-    -Set the game over container to stack on top of the character screen
+    -Set the game over container to stack on top of the character screen ✔️
     -If..else statement for outcome of the game
 
 # Technologies

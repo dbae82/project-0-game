@@ -101,6 +101,10 @@ input {
     color: red;
 }
 
+#reset-btn {
+    font-size: 30px;
+}
+
 #message {
     background-color: whitesmoke;
 }

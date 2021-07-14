@@ -10,6 +10,7 @@ class Character {
         this.coffee = 100;
         this.rest = 100;
         this.happiness = 100;
+        this.timer = null;
     };
     addHealth() {
         return this.health ++;
@@ -22,7 +23,7 @@ class Character {
     };
     reduceStatusBar = () => {
         // console.log("type of health", typeof this.health);
-        this.health -= 3;
+        this.health -= 5;
         this.sleep -= 2;
         this.study -= 4;
         // console.log("health", this.health);
@@ -31,19 +32,27 @@ class Character {
         $("#red").attr("value", `${player.health}`);
         $("#green").attr("value", `${player.sleep}`);
         $("#blue").attr("value", `${player.study}`);
+        if (this.health <= 0) {
+            // console.log("no more health");
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+        }
     };
     startTimer() {
-        setInterval(this.reduceStatusBar, 1000);
+        this.timer = setInterval(this.reduceStatusBar, 1000);
     };
+    resetGame() {
+        clearInterval(this.timer);
+    }
 };
 
 let player;
 
 $("#start-btn").on("click", function(event) {
     player = new Character(`${$("input").val()}`);
-    console.log(player);
-    console.log(player.health);
-    console.log(typeof player.health);
+    // console.log(player);
+    // console.log(player.health);
+    // console.log(typeof player.health);
     $("#character-name").text(`${player.name}`);
     $("#start-screen").css("display", "none");
     $("#character-screen").css("display", "flex");
@@ -70,6 +79,10 @@ $("#blue-btn").on("click", function(event) {
     // console.log("clicked blue!");
     player.addStudy();
     $("#blue").attr("value", `${player.study}`);
+});
+
+$("#reset-btn").on("click", function(event) {
+    console.log("start over clicked!");
 });
 
 // got wonderful assistance from our great TAs Jackson and Whitney
