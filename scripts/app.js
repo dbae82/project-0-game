@@ -19,17 +19,30 @@ class Character {
     };
     addStudy() {
         return this.study ++;
-    }
+    };
+    reduceStatusBar() {
+        // console.log("type of health", typeof this.health);
+        this.health -= 20;
+        // this.sleep --;
+        // this.study --;
+        console.log("health", this.health);
+    };
+    startTimer() {
+        setInterval(this.reduceStatusBar, 1000);
+    };
 };
 
 let player;
 
 $("#start-btn").on("click", function(event) {
     player = new Character(`${$("input").val()}`);
-    // console.log(player);
+    console.log(player);
+    console.log(player.health);
+    console.log(typeof player.health);
     $("#character-name").text(`${player.name}`);
     $("#start-screen").css("display", "none");
     $("#character-screen").css("display", "flex");
+    player.startTimer();
     $("#red").attr("value", `${player.health}`);
     $("#green").attr("value", `${player.sleep}`);
     $("#blue").attr("value", `${player.study}`);
