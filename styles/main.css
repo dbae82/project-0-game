@@ -121,3 +121,7 @@ img {
     height: 400px;
     width: 350px;
 }
+
+.animate__heartBeat {
+    animation-iteration-count: infinite;
+}

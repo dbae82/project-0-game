@@ -12,6 +12,7 @@ class Character {
         this.happiness = 100;
         this.clock = 1000;
         this.timer = null;
+        this.round = 1;
     };
     addHealth() {
         return this.health ++;
@@ -22,22 +23,39 @@ class Character {
     addStudy() {
         return this.study ++;
     };
-    zeroStat (num) {
+    playerDied (num) {
         if (num <= 0) {
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
-        }else if (this.clock <= 0) {
+        };
+        $(".animate__heartBeat").css("animation-iteration-count", "0");
+    };
+    playerRetired () {
+        if (this.clock <= 0) {
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
             $("#message p").text("Congrats on retirement!!");    
         };
+        $(".animate__heartBeat").css("animation-iteration-count", "0");
+    };
+    zeroStat (num) {
+        if (num <= 0) {
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+            $(".animate__heartBeat").css("animation-iteration-count", "0");
+        }else if (this.clock <= 0) {
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+            $("#message p").text("Congrats on retirement!!");    
+            $(".animate__heartBeat").css("animation-iteration-count", "0");
+        };
     }
-    reduceStatusBar = () => {
+    reduceStatusOne = () => {
         // console.log("type of health", typeof this.health);
         this.health -= 2;
         this.sleep -= 3;
         this.study -= 4;
-        this.clock -= 100;
+        this.clock -= 50;
         // console.log("health", this.health);
         // console.log("sleep", this.sleep);
         // console.log("study", this.study);
@@ -71,16 +89,45 @@ class Character {
         //     $("#game-over-screen").css("display", "flex");
         //     $("#message p").text("Congrats on retirement!!");    
         // };
-        this.zeroStat(this.health);
-        this.zeroStat(this.sleep);
-        this.zeroStat(this.study);
+        // this.zeroStat(this.health);
+        // this.zeroStat(this.sleep);
+        // this.zeroStat(this.study);
+        this.playerDied(this.health);
+        this.playerDied(this.sleep);
+        this.playerDied(this.study);
+        if (this.clock <= 0) {
+            this.firstEvolve();
+            this.round ++;
+        };
+        
     };
-    startTimer() {
-        this.timer = setInterval(this.reduceStatusBar, 1000);
+    reduceStatusTwo = () => {
+        this.work -= 2;
+        this.play -= 3;
+        this.coffee -= 4;
+        this.clock -= 50;
+        $("#red").attr("value", `${player.work}`);
+        $("#green").attr("value", `${player.play}`);
+        $("#blue").attr("value", `${player.coffee}`);
+        this.zeroStat(this.work);
+        this.zeroStat(this.play);
+        this.zeroStat(this.coffee);
+    }
+    startTimerOne() {
+        this.timer = setInterval(this.reduceStatusOne, 1000);
     };
-    resetGame() {
+    startTimerTwo() {
+        this.timer = setInterval(this.reduceStatusTwo, 1000);
+    }
+    firstEvolve() {
         clearInterval(this.timer);
-
+        this.clock = 1000;
+        $("#player-img").attr("src", "assets/worker.png");
+        $("#red-btn").text("Work");
+        $("#green-btn").text("Play");
+        $("#blue-btn").text("Coffee");
+        this.startTimerTwo();
+        this.reduceStatusTwo();
     };
 };
 
@@ -94,7 +141,7 @@ $("#start-btn").on("click", function(event) {
     $("#character-name").text(`${player.name}`);
     $("#start-screen").css("display", "none");
     $("#character-screen").css("display", "flex");
-    player.startTimer();
+    player.startTimerOne();
     $("#red").attr("value", `${player.health}`);
     $("#green").attr("value", `${player.sleep}`);
     $("#blue").attr("value", `${player.study}`);
@@ -102,9 +149,11 @@ $("#start-btn").on("click", function(event) {
 
 $("#red-btn").on("click", function(event) {
     // console.log("clicked red!");
-    // console.log(player);
+    console.log(player.health, "before");
     player.addHealth();
     $("#red").attr("value", `${player.health}`);
+    console.log(player.health, "after");
+    // $("#red").attr("value", `${player.work}`);
     // $(".fa-plus-square").addclass("animate__bounceIn");
 });
 
@@ -112,12 +161,14 @@ $("#green-btn").on("click", function(event) {
     // console.log("clicked green!");
     player.addSleep();
     $("#green").attr("value", `${player.sleep}`);
+    // $("#green").attr("value", `${player.play}`);
 });
 
 $("#blue-btn").on("click", function(event) {
     // console.log("clicked blue!");
     player.addStudy();
     $("#blue").attr("value", `${player.study}`);
+    // $("#blue").attr("value", `${player.coffee}`);
 });
 
 $("#reset-btn").on("click", function(event) {
