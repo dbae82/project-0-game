@@ -10,6 +10,7 @@ class Character {
         this.coffee = 100;
         this.rest = 100;
         this.happiness = 100;
+        this.clock = 1000;
         this.timer = null;
     };
     addHealth() {
@@ -23,9 +24,10 @@ class Character {
     };
     reduceStatusBar = () => {
         // console.log("type of health", typeof this.health);
-        this.health -= 5;
-        this.sleep -= 2;
+        this.health -= 2;
+        this.sleep -= 3;
         this.study -= 4;
+        this.clock -= 200;
         // console.log("health", this.health);
         // console.log("sleep", this.sleep);
         // console.log("study", this.study);
@@ -36,14 +38,37 @@ class Character {
             // console.log("no more health");
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
-        }
+        }else if (this.clock <= 0) {
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+            $("#message p").text("Congrats on retirement!!");    
+        };
+        if (this.sleep <= 0) {
+            // console.log("no more health");
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+        }else if (this.clock <= 0) {
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+            $("#message p").text("Congrats on retirement!!");    
+        };
+        if (this.study <= 0) {
+            // console.log("no more health");
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+        }else if (this.clock <= 0) {
+            clearInterval(this.timer);
+            $("#game-over-screen").css("display", "flex");
+            $("#message p").text("Congrats on retirement!!");    
+        };
     };
     startTimer() {
         this.timer = setInterval(this.reduceStatusBar, 1000);
     };
     resetGame() {
         clearInterval(this.timer);
-    }
+
+    };
 };
 
 let player;
@@ -82,7 +107,10 @@ $("#blue-btn").on("click", function(event) {
 });
 
 $("#reset-btn").on("click", function(event) {
-    console.log("start over clicked!");
+    // console.log("start over clicked!");
+    $("#game-over-screen").css("display", "none");
+    $("#character-screen").css("display", "none");
+    $("#start-screen").css("display", "block");
 });
 
 // got wonderful assistance from our great TAs Jackson and Whitney

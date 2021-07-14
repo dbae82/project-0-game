@@ -96,9 +96,9 @@ The game will end if either the character dies or the character maintains happin
 8. Style the game over screen ✔️
 
 9. Set up event listeners for the game over screen ✔️
-    -Set the button to reset the game
+    -Set the button to reset the game ✔️
     -Set the game over container to stack on top of the character screen ✔️
-    -If..else statement for outcome of the game
+    -If..else statement for outcome of the game ✔️
 
 # Technologies
 Front end - HTML, CSS, JavaScript
