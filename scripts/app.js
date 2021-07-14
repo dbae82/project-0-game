@@ -27,16 +27,16 @@ class Character {
         if (num <= 0) {
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
+            $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
-        $(".animate__heartBeat").css("animation-iteration-count", "0");
     };
     playerRetired () {
         if (this.clock <= 0) {
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
             $("#message p").text("Congrats on retirement!!");    
+            $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
-        $(".animate__heartBeat").css("animation-iteration-count", "0");
     };
     zeroStat (num) {
         if (num <= 0) {
@@ -149,10 +149,8 @@ $("#start-btn").on("click", function(event) {
 
 $("#red-btn").on("click", function(event) {
     // console.log("clicked red!");
-    console.log(player.health, "before");
     player.addHealth();
     $("#red").attr("value", `${player.health}`);
-    console.log(player.health, "after");
     // $("#red").attr("value", `${player.work}`);
     // $(".fa-plus-square").addclass("animate__bounceIn");
 });
@@ -176,6 +174,12 @@ $("#reset-btn").on("click", function(event) {
     $("#game-over-screen").css("display", "none");
     $("#character-screen").css("display", "none");
     $("#start-screen").css("display", "block");
+    $(".animate__heartBeat").css("animation-iteration-count", "infinite");
+    $("#red-btn").text("Health");
+    $("#green-btn").text("Sleep");
+    $("#blue-btn").text("Study");
+    $("#player-img").attr("src", "assets/student.png");
+    player.startTimerOne();
 });
 
 // got wonderful assistance from our great TAs Jackson and Whitney
