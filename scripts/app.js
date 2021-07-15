@@ -16,7 +16,7 @@ class Character {
         this.round = 1;
         this.aging = null;
     };
-    // can reduce redundant code
+
     addHealth() {
         return this.health ++;
     };
@@ -41,7 +41,6 @@ class Character {
     addHappiness() {
         return this.happiness ++;
     };
-    
     
     playerDied (num) {
         if (num <= 0) {
@@ -141,8 +140,8 @@ class Character {
     };
     reduceStatusThree = () => {
         this.work -= 2;
-        this.rest -= 6;
-        this.happiness -= 5;
+        this.rest -= 7;
+        this.happiness -= 6;
         this.clock -= 50;
         $("#red").attr("value", `${player.work}`);
         $("#green").attr("value", `${player.rest}`);
