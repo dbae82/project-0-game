@@ -2,6 +2,7 @@ console.log("This is the life of a developer");
 class Character {
     constructor(name) {
         this.name = name;
+        this.age = 26;
         this.health = 100;
         this.sleep = 100;
         this.study = 100;
@@ -162,6 +163,8 @@ class Character {
         $("#red-btn").text("Work");
         $("#green-btn").text("Play");
         $("#blue-btn").text("Coffee");
+        this.age = 30;
+        $("#character-name").text(`${player.name}, ${player.age} years old`);
         this.startTimerTwo();
         this.reduceStatusTwo();
     };
@@ -172,6 +175,8 @@ class Character {
         $("#red-btn").text("Work");
         $("#green-btn").text("Rest");
         $("#blue-btn").text("Happiness");
+        this.age = 67;
+        $("#character-name").text(`${player.name}, ${player.age} years old`);
         this.startTimerThree();
         this.reduceStatusThree();
     };
@@ -185,7 +190,7 @@ $("#start-btn").on("click", function(event) {
     // console.log(player);
     // console.log(player.health);
     // console.log(typeof player.health);
-    $("#character-name").text(`${player.name}`);
+    $("#character-name").text(`${player.name}, ${player.age} years old`);
     $("#start-screen").css("display", "none");
     $("#character-screen").css("display", "flex");
     player.startTimerOne();
