@@ -55,9 +55,12 @@ The game will end if either the character dies or the character maintains happin
 
 # Icebox
 1. setup a media query for smaller screens (max-width: 375px)
-2. animations for the three characters to provide a little more life
+2. animations for the three characters to provide a little more life ✔️
 3. add fontawesome icon animations when buttons are clicked
 4. setInterval time to get shorter as each evolution occur to increase difficulty
+5. add name, social links, and email ✔️
+6. add border around entire page
+7. reduce redundant code
 
 # Milestones/Minimal Viable Product
 1. Write out HTML for the beginning screen ✔️

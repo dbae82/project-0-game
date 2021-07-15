@@ -16,15 +16,23 @@ body {
     justify-content: center;
 }
 
+/* .with-title {
+    width: 100vw;
+    height: 100vh;
+} */
+
 #start-screen {
     display: block;
+}
+
+#start-screen h1 {
+    text-align: center;
 }
 
 #start-section {
     display: flex;
     flex-direction: row;
     position: relative;
-    right: 15px;
 }
 
 input {
@@ -96,6 +104,8 @@ input {
     display: none;
     text-align: center;
     position: absolute;
+    /* justify-content: center;
+    align-items: center; */
     z-index: 10;
 }
 
@@ -124,4 +134,19 @@ img {
 
 .animate__heartBeat {
     animation-iteration-count: infinite;
+}
+
+#credit {
+    display: flex;
+    /* flex-direction: column; */
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    position: fixed;
+    justify-content: center;
+    font-size: larger;
+}
+
+#credit p {
+    padding: 0 15px;
 }

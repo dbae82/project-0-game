@@ -12,8 +12,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-        <!-- fontawesome link -->
-        <script src="https://kit.fontawesome.com/445138518e.js" crossorigin="anonymous"></script>
         <!-- NES.css -->
         <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
         <!-- animate.css -->
@@ -29,41 +27,53 @@
     </head>
 
     <body>
-        <div id="start-screen">
-            <h1>Enter Character's Name</h1>
-            <section class="nes-container is-rounded" id="start-section">
-                <form action="" id="start-form">
-                    <input type="text" name="charName">
-                </form>
-                <button type="button" class="nes-btn is-submit" id="start-btn">Submit</button>
-            </section>
-        </div>
-        <div id="character-screen">
-            <h1 id="character-name"></h1>
-            <section id="progress-bars">
-                <progress class="nes-progress is-error" id="red" value="100" max="100">Health</progress>
-                <progress class="nes-progress is-success" id="green" value="100" max="100">Sleep</progress>
-                <progress class="nes-progress is-primary" id="blue" value="100" max="100">Study</progress>
-            </section>
-            <img class="animate__heartBeat" id="player-img" src="assets/student.png" alt="student" />
-            <!-- <section id="icons-container">
-                <i class="fas fa-plus-square" id="icon"></i>
-                <i class="fas fa-bed" id="icon"></i>
-                <i class="fas fa-school" id="icon"></i>
-            </section> -->
-            <section id="player-buttons">
-                <button type="button" class="nes-btn is-error" id="red-btn">Health</button>
-                <button type="button" class="nes-btn is-success" id="green-btn">Sleep</button>
-                <button type="button" class="nes-btn is-primary" id="blue-btn">Study</button>
-            </section>
-        </div>
-        <div id="game-over-screen">
-            <div class="nes-container is-rounded" id="message">
-                <h1>GAME OVER</h1>
-                <p>YOU DIED</p>
-                <button type="button" class="nes-btn is-warning" id="reset-btn">Start Over?</button>
-            </div>    
-        </div>
+        <!-- <div class="nes-container with-title is-rounded">
+            <p class="title">created by dan bae</p> -->
+            <div id="start-screen">
+                <h1>Enter Character's Name</h1>
+                <section class="nes-container is-rounded" id="start-section">
+                    <form action="" id="start-form">
+                        <input type="text" name="charName">
+                    </form>
+                    <button type="button" class="nes-btn is-submit" id="start-btn">Submit</button>
+                </section>
+            </div>
+            <div id="character-screen">
+                <h1 id="character-name"></h1>
+                <section id="progress-bars">
+                    <progress class="nes-progress is-error" id="red" value="100" max="100">Health</progress>
+                    <progress class="nes-progress is-success" id="green" value="100" max="100">Sleep</progress>
+                    <progress class="nes-progress is-primary" id="blue" value="100" max="100">Study</progress>
+                </section>
+                <img class="animate__heartBeat" id="player-img" src="assets/student.png" alt="student" />
+                <!-- <section id="icons-container">
+                    <i class="fas fa-plus-square" id="icon"></i>
+                    <i class="fas fa-bed" id="icon"></i>
+                    <i class="fas fa-school" id="icon"></i>
+                </section> -->
+                <section id="player-buttons">
+                    <button type="button" class="nes-btn is-error" id="red-btn">Health</button>
+                    <button type="button" class="nes-btn is-success" id="green-btn">Sleep</button>
+                    <button type="button" class="nes-btn is-primary" id="blue-btn">Study</button>
+                </section>
+            </div>
+            <div id="game-over-screen">
+                <div class="nes-container is-rounded" id="message">
+                    <h1>GAME OVER</h1>
+                    <p>YOU DIED</p>
+                    <button type="button" class="nes-btn is-warning" id="reset-btn">Start Over?</button>
+                </div>    
+            </div>
+        <!-- </div> -->
+        <footer id="credit">
+            <p>created by: dan bae</p>
+            <ul>
+                <a class="nes-icon instagram is-small" href="https://www.instagram.com/dan_bae/" target="_blank"></a>
+                <a class="nes-icon linkedin is-small" href="https://www.linkedin.com/in/daniel-bae-6814ab31/" target="_blank"></a>
+                <a class="nes-icon github is-small" href="https://github.com/dbae82/" target="_blank"></a>
+                <a class="nes-icon gmail is-small" href="mailto: dbae82@gmail.com"></a>
+            </ul>
+        </footer>
     </body>
 
 </html>

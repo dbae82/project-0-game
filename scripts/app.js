@@ -14,7 +14,9 @@ class Character {
         this.clock = 1000;
         this.timer = null;
         this.round = 1;
+        this.aging = null;
     };
+    // can reduce redundant code
     addHealth() {
         return this.health ++;
     };
@@ -44,6 +46,7 @@ class Character {
     playerDied (num) {
         if (num <= 0) {
             clearInterval(this.timer);
+            clearInterval(this.aging);
             $("#game-over-screen").css("display", "flex");
             $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
@@ -59,6 +62,7 @@ class Character {
     zeroStat (num) {
         if (num <= 0) {
             clearInterval(this.timer);
+            clearInterval(this.aging);
             $("#game-over-screen").css("display", "flex");
             $(".animate__heartBeat").css("animation-iteration-count", "0");
         }else if (this.clock <= 0) {
@@ -67,7 +71,7 @@ class Character {
             $("#message p").text("Congrats on retirement!!");    
             $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
-    }
+    };
     reduceStatusOne = () => {
         // console.log("type of health", typeof this.health);
         this.health -= 2;
@@ -120,9 +124,9 @@ class Character {
         
     };
     reduceStatusTwo = () => {
-        this.work -= 2;
-        this.play -= 3;
-        this.coffee -= 4;
+        this.work -= 3;
+        this.play -= 4;
+        this.coffee -= 5;
         this.clock -= 50;
         $("#red").attr("value", `${player.work}`);
         $("#green").attr("value", `${player.play}`);
@@ -137,8 +141,8 @@ class Character {
     };
     reduceStatusThree = () => {
         this.work -= 2;
-        this.rest -= 3;
-        this.happiness -= 4;
+        this.rest -= 6;
+        this.happiness -= 5;
         this.clock -= 50;
         $("#red").attr("value", `${player.work}`);
         $("#green").attr("value", `${player.rest}`);
@@ -167,6 +171,7 @@ class Character {
         $("#character-name").text(`${player.name}, ${player.age} years old`);
         this.startTimerTwo();
         this.reduceStatusTwo();
+        this.startAging();
     };
     secondEvolve() {
         clearInterval(this.timer);
@@ -175,12 +180,18 @@ class Character {
         $("#red-btn").text("Work");
         $("#green-btn").text("Rest");
         $("#blue-btn").text("Happiness");
-        this.age = 67;
+        this.age = 63;
         $("#character-name").text(`${player.name}, ${player.age} years old`);
         this.startTimerThree();
         this.reduceStatusThree();
     };
-    
+    playerAging = () => {
+        this.age ++;
+        $("#character-name").text(`${player.name}, ${player.age} years old`);
+    };
+    startAging() {
+        this.aging = setInterval(this.playerAging, 5000);
+    };
 };
 
 let player;
@@ -257,8 +268,8 @@ $("#reset-btn").on("click", function(event) {
     $("#green-btn").text("Sleep");
     $("#blue-btn").text("Study");
     $("#player-img").attr("src", "assets/student.png");
-    player.startTimerOne();
-    clearInterval(player.timer);
 });
 
 // got wonderful assistance from our great TAs Jackson and Whitney
+// help with callback functions turning it into an arrow function by Adonis
+// help with buttons from April
