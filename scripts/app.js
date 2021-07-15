@@ -23,6 +23,23 @@ class Character {
     addStudy() {
         return this.study ++;
     };
+    addWork() {
+        return this.work ++;
+    };
+    addPlay() {
+        return this.play ++;
+    };
+    addCoffee() {
+        return this.coffee ++;
+    };
+    addRest() {
+        return this.rest ++;
+    };
+    addHappiness() {
+        return this.happiness ++;
+    };
+    
+    
     playerDied (num) {
         if (num <= 0) {
             clearInterval(this.timer);
@@ -30,14 +47,14 @@ class Character {
             $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
     };
-    playerRetired () {
-        if (this.clock <= 0) {
-            clearInterval(this.timer);
-            $("#game-over-screen").css("display", "flex");
-            $("#message p").text("Congrats on retirement!!");    
-            $(".animate__heartBeat").css("animation-iteration-count", "0");
-        };
-    };
+    // playerRetired () {
+    //     if (this.clock <= 0) {
+    //         clearInterval(this.timer);
+    //         $("#game-over-screen").css("display", "flex");
+    //         $("#message p").text("Congrats on retirement!!");    
+    //         $(".animate__heartBeat").css("animation-iteration-count", "0");
+    //     };
+    // };
     zeroStat (num) {
         if (num <= 0) {
             clearInterval(this.timer);
@@ -109,16 +126,35 @@ class Character {
         $("#red").attr("value", `${player.work}`);
         $("#green").attr("value", `${player.play}`);
         $("#blue").attr("value", `${player.coffee}`);
+        this.playerDied(this.work);
+        this.playerDied(this.play);
+        this.playerDied(this.coffee);
+        if (this.clock <= 0) {
+            this.secondEvolve();
+            this.round ++;
+        };
+    };
+    reduceStatusThree = () => {
+        this.work -= 2;
+        this.rest -= 3;
+        this.happiness -= 4;
+        this.clock -= 50;
+        $("#red").attr("value", `${player.work}`);
+        $("#green").attr("value", `${player.rest}`);
+        $("#blue").attr("value", `${player.happiness}`);
         this.zeroStat(this.work);
-        this.zeroStat(this.play);
-        this.zeroStat(this.coffee);
-    }
+        this.zeroStat(this.rest);
+        this.zeroStat(this.happiness);
+    };
     startTimerOne() {
         this.timer = setInterval(this.reduceStatusOne, 1000);
     };
     startTimerTwo() {
         this.timer = setInterval(this.reduceStatusTwo, 1000);
-    }
+    };
+    startTimerThree() {
+        this.timer = setInterval(this.reduceStatusThree, 1000);
+    };
     firstEvolve() {
         clearInterval(this.timer);
         this.clock = 1000;
@@ -129,6 +165,17 @@ class Character {
         this.startTimerTwo();
         this.reduceStatusTwo();
     };
+    secondEvolve() {
+        clearInterval(this.timer);
+        this.clock = 1000;
+        $("#player-img").attr("src", "assets/oldguy.png");
+        $("#red-btn").text("Work");
+        $("#green-btn").text("Rest");
+        $("#blue-btn").text("Happiness");
+        this.startTimerThree();
+        this.reduceStatusThree();
+    };
+    
 };
 
 let player;
@@ -149,24 +196,50 @@ $("#start-btn").on("click", function(event) {
 
 $("#red-btn").on("click", function(event) {
     // console.log("clicked red!");
-    player.addHealth();
-    $("#red").attr("value", `${player.health}`);
-    // $("#red").attr("value", `${player.work}`);
-    // $(".fa-plus-square").addclass("animate__bounceIn");
+    if (player.round === 1) {
+        player.addHealth();
+        $("#red").attr("value", `${player.health}`);
+    };
+    if (player.round === 2) {
+        player.addWork();
+        $("#red").attr("value", `${player.work}`);
+    };
+    if (player.round === 3) {
+        player.addWork();
+        $("#red").attr("value", `${player.work}`);
+    };
 });
 
 $("#green-btn").on("click", function(event) {
     // console.log("clicked green!");
-    player.addSleep();
-    $("#green").attr("value", `${player.sleep}`);
-    // $("#green").attr("value", `${player.play}`);
+    if (player.round === 1) {
+        player.addSleep();
+        $("#green").attr("value", `${player.sleep}`);
+    };
+    if (player.round === 2) {
+        player.addPlay();
+        $("#green").attr("value", `${player.play}`);
+    };
+    if (player.round === 3) {
+        player.addRest();
+        $("#green").attr("value", `${player.rest}`);
+    };
 });
 
 $("#blue-btn").on("click", function(event) {
     // console.log("clicked blue!");
-    player.addStudy();
-    $("#blue").attr("value", `${player.study}`);
-    // $("#blue").attr("value", `${player.coffee}`);
+    if (player.round === 1) {
+        player.addStudy();
+        $("#blue").attr("value", `${player.study}`);
+    };
+    if (player.round === 2) {
+        player.addCoffee();
+        $("#blue").attr("value", `${player.coffee}`);
+    };
+    if (player.round === 3) {
+        player.addHappiness();
+        $("#blue").attr("value", `${player.happiness}`);
+    };
 });
 
 $("#reset-btn").on("click", function(event) {
@@ -180,6 +253,7 @@ $("#reset-btn").on("click", function(event) {
     $("#blue-btn").text("Study");
     $("#player-img").attr("src", "assets/student.png");
     player.startTimerOne();
+    clearInterval(player.timer);
 });
 
 // got wonderful assistance from our great TAs Jackson and Whitney
