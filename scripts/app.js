@@ -141,7 +141,7 @@ class Character {
     };
     reduceStatusThree = () => {
         this.work -= 2;
-        this.rest -= 7;
+        this.rest -= 8;
         this.happiness -= 6;
         this.clock -= 50;
         $("#red").attr("value", `${player.work}`);
@@ -190,7 +190,7 @@ class Character {
         $("#character-name").text(`${player.name}, ${player.age} years old`);
     };
     startAging() {
-        this.aging = setInterval(this.playerAging, 5000);
+        this.aging = setInterval(this.playerAging, 4000);
     };
 };
 
