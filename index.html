@@ -36,6 +36,19 @@
                         <input type="text" name="charName">
                     </form>
                     <button type="button" class="nes-btn is-submit" id="start-btn">Submit</button>
+                    <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();" id="help-btn">
+                        Help
+                        </button>
+                        <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+                        <form method="dialog">
+                            <p class="title">Instructions</p>
+                            <p>Help the character reach retirement by clicking on the buttons that will fill up the status bar. If one of the bars depletes, the character will die. Good luck!</p>
+                            <menu class="dialog-menu">
+                            <!-- <button class="nes-btn">Cancel</button> -->
+                            <button class="nes-btn is-primary">Ok</button>
+                            </menu>
+                        </form>
+                        </dialog>
                 </section>
             </div>
             <div id="character-screen">

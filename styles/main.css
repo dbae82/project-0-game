@@ -40,6 +40,10 @@ input {
     margin-right: 10px;
 }
 
+#help-btn {
+    /* padding-left: 10px; */
+}
+
 #character-screen {
     display: none;
     flex-direction: column;

@@ -11,7 +11,7 @@ class Character {
         this.coffee = 100;
         this.rest = 100;
         this.happiness = 100;
-        this.clock = 1000;
+        this.clock = 1250;
         this.timer = null;
         this.round = 1;
         this.aging = null;
@@ -67,7 +67,8 @@ class Character {
         }else if (this.clock <= 0) {
             clearInterval(this.timer);
             $("#game-over-screen").css("display", "flex");
-            $("#message p").text("Congrats on retirement!!");    
+            $("#message p").text("Congrats on retirement!!");
+            $("#message p").css("color", "green");
             $(".animate__heartBeat").css("animation-iteration-count", "0");
         };
     };
